@@ -21,21 +21,21 @@ const flagshipSystems = [
 const essays = [
   {
     title: "Why Most RAG Systems Fail Quietly",
-    href: "/writing/why-rag-systems-fail-quietly",
+    href: "/writing/why-most-rag-systems-fail-quietly",
     description:
       "Why AI systems can sound confident even when working with weak or incomplete information.",
   },
   {
-    title: "Correlation Is Not a Business Strategy",
-    href: "/writing/correlation-is-not-a-business-strategy",
+    title: "The Answer Sounded Right",
+    href: "/writing/the-answer-sounded-right",
     description:
-      "Why strong-looking metrics can still lead companies toward poor strategic decisions.",
+      "A companion story showing the human consequence of quiet AI failure.",
   },
   {
-    title: "Why Pricing Experiments Often Mislead Companies",
-    href: "/writing/why-pricing-experiments-mislead-companies",
+    title: "Building AI Systems That Know Their Limits",
+    href: "/writing",
     description:
-      "How average results can hide customer-level risk and long-term business tradeoffs.",
+      "Calibrated confidence, uncertainty handling, and evidence-aware response generation.",
   },
 ];
 
@@ -72,6 +72,83 @@ export default function Home() {
               className="rounded-full border border-slate-700 px-8 py-4 text-center text-sm font-semibold text-slate-200 transition hover:border-cyan-400 hover:text-cyan-300"
             >
               Read Essays
+            </Link>
+          </div>
+        </div>
+      </section>
+
+      <section className="mx-auto max-w-7xl px-6 pb-16 md:px-10">
+        <div className="rounded-3xl border border-cyan-400/20 bg-slate-900/70 p-6 md:p-8">
+          <p className="text-sm font-semibold uppercase tracking-[0.2em] text-cyan-400">
+            Portfolio Framework
+          </p>
+
+          <h2 className="mt-2 text-2xl font-bold text-white">
+            Systems, Philosophy, and Consequence
+          </h2>
+
+          <p className="mt-4 max-w-3xl text-sm leading-7 text-slate-400">
+            This portfolio is intentionally structured across three connected
+            layers: operational systems, interpretive writing, and narrative
+            consequence. Together they demonstrate not only how enterprise AI
+            systems work, but why governance, uncertainty, and trust matter in
+            real-world environments.
+          </p>
+
+          <div className="mt-8 grid gap-4 md:grid-cols-3">
+            <Link
+              href="/projects"
+              className="rounded-2xl border border-slate-800 bg-slate-950/70 p-5 transition hover:border-cyan-400/40"
+            >
+              <p className="text-sm font-semibold uppercase tracking-[0.18em] text-cyan-400">
+                Projects
+              </p>
+
+              <p className="mt-3 text-xl font-bold text-white">
+                Here is the system.
+              </p>
+
+              <p className="mt-3 text-sm leading-7 text-slate-400">
+                Architecture demos, governance workflows, retrieval systems,
+                experimentation frameworks, and enterprise decision
+                infrastructure.
+              </p>
+            </Link>
+
+            <Link
+              href="/writing"
+              className="rounded-2xl border border-slate-800 bg-slate-950/70 p-5 transition hover:border-cyan-400/40"
+            >
+              <p className="text-sm font-semibold uppercase tracking-[0.18em] text-cyan-400">
+                Writing
+              </p>
+
+              <p className="mt-3 text-xl font-bold text-white">
+                Here is the philosophy behind the system.
+              </p>
+
+              <p className="mt-3 text-sm leading-7 text-slate-400">
+                Long-form essays explaining governance, observability,
+                uncertainty, explainability, and trustworthy enterprise AI.
+              </p>
+            </Link>
+
+            <Link
+              href="/writing/the-answer-sounded-right"
+              className="rounded-2xl border border-slate-800 bg-slate-950/70 p-5 transition hover:border-cyan-400/40"
+            >
+              <p className="text-sm font-semibold uppercase tracking-[0.18em] text-cyan-400">
+                Stories
+              </p>
+
+              <p className="mt-3 text-xl font-bold text-white">
+                Here is the human consequence of the system.
+              </p>
+
+              <p className="mt-3 text-sm leading-7 text-slate-400">
+                Narrative companion pieces showing how weak governance, silent
+                AI failure, and operational uncertainty affect real people.
+              </p>
             </Link>
           </div>
         </div>
@@ -145,16 +222,17 @@ export default function Home() {
         <div className="mx-auto max-w-7xl px-6 py-16 md:px-10 md:py-20">
           <div className="mb-10">
             <p className="mb-3 text-sm font-semibold uppercase tracking-[0.25em] text-cyan-400">
-              Writing & Insights
+              Writing & Narrative Systems Analysis
             </p>
 
             <h2 className="max-w-4xl text-4xl font-bold tracking-tight text-white md:text-5xl">
-              Plain-language essays that explain the systems behind the work.
+              Essays and stories that explain the systems behind the work.
             </h2>
 
             <p className="mt-5 max-w-3xl text-lg leading-8 text-slate-300">
               The writing layer makes the technical work accessible to
-              nontechnical leaders, recruiters, and business stakeholders.
+              nontechnical leaders, recruiters, and business stakeholders. The
+              companion stories make the human consequences easier to see.
             </p>
           </div>
 
@@ -174,7 +252,7 @@ export default function Home() {
                 </p>
 
                 <p className="mt-5 text-sm font-semibold text-cyan-300">
-                  Read essay →
+                  Read →
                 </p>
               </Link>
             ))}

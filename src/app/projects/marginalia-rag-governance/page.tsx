@@ -9,37 +9,6 @@ export const metadata: Metadata = {
     "A governance-first RAG architecture case study focused on weak-context detection, trust classification, refusal-first behavior, and AI observability.",
 };
 
-const failureTests = [
-  {
-    title: "Empty Index",
-    description:
-      "System detects that no usable context exists and refuses rather than inventing an answer.",
-  },
-  {
-    title: "Strict Threshold",
-    description:
-      "Retrieval scores below the trust threshold are blocked before reaching the generation layer.",
-  },
-  {
-    title: "Semantic Mismatch",
-    description:
-      "Retrieved chunks may appear similar but fail meaningfully against the user’s actual question.",
-  },
-  {
-    title: "Weak Context",
-    description:
-      "The system flags incomplete or low-confidence context and changes the response mode.",
-  },
-];
-
-const principles = [
-  "Trust before fluency",
-  "Observability before scale",
-  "Refusal before hallucination",
-  "Explainability before automation",
-  "Reliability before optimization",
-];
-
 export default function MarginaliaRAGGovernancePage() {
   return (
     <main className="min-h-screen bg-[#0B1120] text-white">
@@ -75,10 +44,10 @@ export default function MarginaliaRAGGovernancePage() {
             </a>
 
             <Link
-              href="/writing"
+              href="/writing/why-most-rag-systems-fail-quietly"
               className="rounded-full border border-slate-600 px-6 py-3 text-sm font-semibold text-slate-200 transition hover:border-blue-400 hover:text-blue-300"
             >
-              Read Related Essays
+              Read Related Essay
             </Link>
           </div>
         </div>
@@ -264,37 +233,76 @@ export default function MarginaliaRAGGovernancePage() {
         </div>
       </section>
 
-      <section className="border-t border-slate-800 bg-slate-950">
+      <section className="border-t border-slate-800 bg-slate-950/40">
         <div className="mx-auto max-w-6xl px-6 py-20">
           <div className="max-w-3xl">
             <p className="text-sm font-semibold uppercase tracking-[0.25em] text-blue-400">
-              Related Writing
+              System Notes / Applied Essay
             </p>
 
-            <h2 className="mt-4 text-3xl font-bold">
+            <h2 className="mt-4 text-4xl font-bold tracking-tight text-white">
+              Why this architecture exists
+            </h2>
+
+            <p className="mt-6 text-lg leading-8 text-slate-300">
+              Most Retrieval-Augmented Generation systems are optimized to
+              produce answers quickly and fluently. Marginalia was designed
+              around a different question:
+            </p>
+
+            <div className="mt-8 rounded-3xl border border-blue-500/20 bg-slate-900/70 p-8">
+              <p className="text-2xl font-semibold text-white">
+                Should the system answer at all?
+              </p>
+            </div>
+
+            <p className="mt-8 text-lg leading-8 text-slate-300">
+              In enterprise environments, the greatest operational risk is often
+              not visible failure. It is quiet failure: systems sounding
+              confident while operating on weak, incomplete, stale, or poorly
+              aligned evidence.
+            </p>
+
+            <p className="mt-6 text-lg leading-8 text-slate-300">
+              This architecture treats retrieval quality, uncertainty,
+              observability, refusal logic, and governance as first-class system
+              requirements rather than afterthoughts.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <section className="border-t border-slate-800 bg-[#0B1120]">
+        <div className="mx-auto max-w-6xl px-6 py-20">
+          <div className="max-w-3xl">
+            <p className="text-sm font-semibold uppercase tracking-[0.25em] text-blue-400">
+              Related Long-Form Essays
+            </p>
+
+            <h2 className="mt-4 text-4xl font-bold tracking-tight text-white">
               Essays Behind the Architecture
             </h2>
 
-            <p className="mt-6 text-slate-300">
+            <p className="mt-6 text-lg leading-8 text-slate-300">
               These essays explain the larger ideas behind the system using
               simple language, business examples, and relatable scenarios.
             </p>
           </div>
 
-          <div className="mt-10 grid gap-6 md:grid-cols-3">
+          <div className="mt-12 grid gap-6 md:grid-cols-3">
             <Link
-              href="/writing/why-rag-systems-fail-quietly"
-              className="rounded-2xl border border-slate-800 bg-[#0B1120] p-6 transition hover:border-blue-500"
+              href="/writing/why-most-rag-systems-fail-quietly"
+              className="rounded-3xl border border-slate-800 bg-slate-900/70 p-6 transition hover:border-blue-500/40 hover:bg-slate-900"
             >
-              <p className="text-sm uppercase tracking-widest text-blue-400">
-                AI Governance
+              <p className="text-sm font-semibold uppercase tracking-[0.2em] text-blue-400">
+                Technical Essay
               </p>
 
-              <h3 className="mt-3 text-2xl font-semibold">
+              <h3 className="mt-4 text-3xl font-bold leading-tight text-white">
                 Why Most RAG Systems Fail Quietly
               </h3>
 
-              <p className="mt-4 text-slate-300">
+              <p className="mt-4 text-base leading-7 text-slate-300">
                 Explains how AI systems can sound confident even when operating
                 on weak evidence.
               </p>
@@ -305,57 +313,70 @@ export default function MarginaliaRAGGovernancePage() {
             </Link>
 
             <Link
-              href="/writing/correlation-is-not-a-business-strategy"
-              className="rounded-2xl border border-slate-800 bg-[#0B1120] p-6 transition hover:border-blue-500"
+              href="/writing/the-answer-sounded-right"
+              className="rounded-3xl border border-slate-800 bg-slate-900/70 p-6 transition hover:border-blue-500/40 hover:bg-slate-900"
             >
-              <p className="text-sm uppercase tracking-widest text-blue-400">
-                Decision Intelligence
+              <p className="text-sm font-semibold uppercase tracking-[0.2em] text-blue-400">
+                Companion Story
               </p>
 
-              <h3 className="mt-3 text-2xl font-semibold">
-                Correlation Is Not a Business Strategy
+              <h3 className="mt-4 text-3xl font-bold leading-tight text-white">
+                The Answer Sounded Right
               </h3>
 
-              <p className="mt-4 text-slate-300">
-                Shows why strong-looking metrics can still lead companies toward
-                poor strategic decisions.
+              <p className="mt-4 text-base leading-7 text-slate-300">
+                A fictional claims scenario showing how a polished AI answer can
+                quietly mislead people when retrieval evidence is incomplete.
               </p>
 
               <p className="mt-6 text-sm font-semibold text-blue-300">
-                Read Essay →
+                Read Story →
               </p>
             </Link>
 
-            <Link
-              href="/writing/why-pricing-experiments-mislead-companies"
-              className="rounded-2xl border border-slate-800 bg-[#0B1120] p-6 transition hover:border-blue-500"
-            >
-              <p className="text-sm uppercase tracking-widest text-blue-400">
-                Pricing Analytics
+            <div className="rounded-3xl border border-slate-800 bg-slate-900/70 p-6 opacity-70">
+              <p className="text-sm font-semibold uppercase tracking-[0.2em] text-blue-400">
+                Coming Soon
               </p>
 
-              <h3 className="mt-3 text-2xl font-semibold">
-                Why Pricing Experiments Often Mislead Companies
+              <h3 className="mt-4 text-3xl font-bold leading-tight text-white">
+                Why Weak Context Detection Matters in Enterprise RAG
               </h3>
 
-              <p className="mt-4 text-slate-300">
-                Explains how averages can hide important customer behavior and
-                operational risk.
+              <p className="mt-4 text-base leading-7 text-slate-300">
+                Weak and empty context handling, hallucination prevention,
+                refusal-first behavior, and trust-aware retrieval systems.
               </p>
 
-              <p className="mt-6 text-sm font-semibold text-blue-300">
-                Read Essay →
+              <p className="mt-6 text-sm font-semibold text-slate-500">
+                Coming Soon
               </p>
-            </Link>
+            </div>
           </div>
         </div>
       </section>
 
-      <section className="border-t border-slate-800 bg-slate-950">
-        <div className="mx-auto max-w-6xl px-6 py-16">
-          <h2 className="text-3xl font-bold">Key Lessons Learned</h2>
+      <section className="border-t border-slate-800 bg-slate-950/40">
+        <div className="mx-auto max-w-6xl px-6 py-20">
+          <div className="max-w-3xl">
+            <p className="text-sm font-semibold uppercase tracking-[0.25em] text-blue-400">
+              Portfolio Connection
+            </p>
 
-          <div className="mt-8 grid gap-6 md:grid-cols-2">
+            <h2 className="mt-4 text-4xl font-bold tracking-tight text-white">
+              From Output Generation to Decision Readiness
+            </h2>
+
+            <p className="mt-6 text-lg leading-8 text-slate-300">
+              This project belongs to a broader portfolio thesis: enterprise AI
+              and analytics systems should not simply generate outputs. They
+              should help organizations understand evidence quality,
+              uncertainty, operational risk, and decision readiness before
+              action is taken.
+            </p>
+          </div>
+
+          <div className="mt-12 grid gap-4 md:grid-cols-2">
             {[
               "Retrieval quality is not the same as answer quality.",
               "Silent failure is more dangerous than visible refusal.",
@@ -364,9 +385,9 @@ export default function MarginaliaRAGGovernancePage() {
             ].map((lesson) => (
               <div
                 key={lesson}
-                className="rounded-2xl border border-slate-800 bg-[#0B1120] p-6 text-slate-300"
+                className="rounded-2xl border border-slate-800 bg-slate-900/70 p-6"
               >
-                {lesson}
+                <p className="text-xl font-semibold text-white">{lesson}</p>
               </div>
             ))}
           </div>
@@ -380,7 +401,7 @@ export default function MarginaliaRAGGovernancePage() {
             </Link>
 
             <Link
-              href="/writing/why-rag-systems-fail-quietly"
+              href="/writing/why-most-rag-systems-fail-quietly"
               className="rounded-full bg-blue-500 px-6 py-3 text-sm font-semibold text-white transition hover:bg-blue-400"
             >
               Read RAG Essay

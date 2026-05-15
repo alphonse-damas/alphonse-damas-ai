@@ -2,36 +2,77 @@ export const projects = [
   {
     title: "Marginalia RAG Governance System",
     description:
-      "A governance-oriented retrieval-augmented generation framework focused on weak-context detection, trust scoring, refusal behavior, and observability.",
+      "An enterprise AI governance system focused on retrieval trust classification, weak-context detection, refusal-first behavior, confidence adjustment, observability, and audit traceability.",
     link: "/projects/marginalia-rag-governance",
-    status: "View Project →",
+    status: "View System →",
+    type: "Governed AI Infrastructure",
+    relatedEssays: [
+      {
+        title: "Why Most RAG Systems Fail Quietly",
+        link: "/writing/why-most-rag-systems-fail-quietly",
+      },
+      {
+        title: "The Answer Sounded Right",
+        link: "/writing/the-answer-sounded-right",
+      },
+    ],
   },
   {
     title: "Experimentation / Pricing Analytics",
     description:
-      "Case studies and frameworks for pricing, elasticity, causal inference, experimentation, and commercial decision-making.",
+      "A commercial decision intelligence system for pricing, elasticity, causal inference, experimentation, customer tradeoffs, and executive decision support.",
     link: "/projects/experimentation-pricing-analytics",
-    status: "View Project →",
+    status: "View System →",
+    type: "Commercial Decision Intelligence",
+    relatedEssays: [
+      {
+        title: "Prediction Systems vs Decision Systems",
+        link: "#",
+      },
+      {
+        title: "From Analytics to Decision Intelligence",
+        link: "#",
+      },
+    ],
   },
   {
     title: "Decision Engine / Financial Simulation",
     description:
-      "Scenario-based decision modeling framework designed to evaluate tradeoffs under uncertainty, constraints, and long-term change.",
+      "A scenario-based decision modeling system designed to evaluate tradeoffs under uncertainty, constraints, liquidity pressure, and long-term change.",
     link: "/projects/decision-engine-financial-simulation",
-    status: "View Project →",
+    status: "View System →",
+    type: "Decision Simulation",
+    relatedEssays: [
+      {
+        title: "Prediction Systems vs Decision Systems",
+        link: "#",
+      },
+      {
+        title: "Building AI Systems That Know Their Limits",
+        link: "#",
+      },
+    ],
   },
   {
     title: "Analytics Governance",
     description:
-      "Frameworks for data quality, model monitoring, lineage, validation, auditability, policy controls, and operational trust.",
+      "A governance framework for data quality, model monitoring, lineage, validation, auditability, policy controls, and operational trust.",
     link: "/projects/analytics-governance",
-    status: "View Project →",
-  },
-  {
-    title: "Technical Writing",
-    description:
-      "Essays on decision systems, enterprise AI, observability, weak-context detection, and trustworthy analytics architecture.",
-    link: "/writing",
-    status: "Read Essays →",
+    status: "View System →",
+    type: "Analytics Governance",
+    relatedEssays: [
+      {
+        title: "Observable AI Systems",
+        link: "#",
+      },
+      {
+        title: "Designing AI Systems for Auditability",
+        link: "#",
+      },
+      {
+        title: "The Hidden Cost of Black-Box AI",
+        link: "#",
+      },
+    ],
   },
 ];

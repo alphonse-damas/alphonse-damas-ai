@@ -1,32 +1,52 @@
+"use client";
+
+import React from "react";
+
 export default function ContactPage() {
+  function handleSubmit(event: React.FormEvent<HTMLFormElement>) {
+    event.preventDefault();
+
+    const formData = new FormData(event.currentTarget);
+
+    const name = formData.get("name");
+    const email = formData.get("email");
+    const message = formData.get("message");
+
+    const subject = encodeURIComponent("Portfolio Contact Message");
+
+    const body = encodeURIComponent(
+      `Name: ${name}\nEmail: ${email}\n\nMessage:\n${message}`
+    );
+
+    window.location.href = `mailto:alphonse.damas@gmail.com?subject=${subject}&body=${body}`;
+  }
+
   return (
-    <main className="min-h-screen bg-[#0B1120] text-white px-10 py-20">
-      <section className="max-w-5xl mx-auto">
-        <p className="text-blue-400 uppercase tracking-widest mb-4">
-          Contact
-        </p>
+    <main className="min-h-screen bg-[#020817] text-white px-6 py-24">
+      <div className="max-w-6xl mx-auto">
+        <div className="max-w-2xl mb-16">
+          <p className="text-cyan-400 uppercase tracking-[0.3em] text-sm mb-4">
+            Contact
+          </p>
 
-        <h1 className="text-5xl font-bold mb-6">
-          Let’s Connect
-        </h1>
+          <h1 className="text-5xl font-bold mb-6">Let’s Connect</h1>
 
-        <p className="text-xl text-gray-400 leading-relaxed max-w-3xl mb-16">
-          I’m interested in opportunities involving enterprise analytics,
-          applied AI, decision systems, experimentation, analytics governance,
-          operational intelligence, and trustworthy AI infrastructure.
-        </p>
+          <p className="text-gray-300 text-lg leading-relaxed">
+            I’m interested in opportunities involving enterprise analytics,
+            applied AI, decision systems, experimentation, analytics
+            governance, operational intelligence, and trustworthy AI
+            infrastructure.
+          </p>
+        </div>
 
-        <div className="grid lg:grid-cols-2 gap-10">
-
-          {/* Left Side */}
+        <div className="grid md:grid-cols-2 gap-8">
           <div className="space-y-8">
-
-            <div className="border border-gray-800 bg-[#111827] rounded-2xl p-8">
-              <h2 className="text-2xl font-bold mb-4">
+            <div className="bg-[#071224] border border-white/10 rounded-3xl p-8">
+              <h2 className="text-3xl font-bold mb-6">
                 Professional Interests
               </h2>
 
-              <ul className="space-y-3 text-gray-300 leading-relaxed">
+              <ul className="space-y-4 text-gray-300">
                 <li>• Enterprise AI & Decision Systems</li>
                 <li>• Experimentation & Pricing Analytics</li>
                 <li>• Analytics Governance & Observability</li>
@@ -36,27 +56,22 @@ export default function ContactPage() {
               </ul>
             </div>
 
-            <div className="border border-gray-800 bg-[#111827] rounded-2xl p-8">
-              <h2 className="text-2xl font-bold mb-4">
-                Connect Online
-              </h2>
+            <div className="bg-[#071224] border border-white/10 rounded-3xl p-8">
+              <h2 className="text-3xl font-bold mb-6">Connect Online</h2>
 
-              <div className="space-y-4">
-
+              <div className="space-y-4 text-cyan-400">
                 <a
-                  href="https://www.linkedin.com/in/alphonse-damas-phd-609222212/"
+                  href="https://www.linkedin.com"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="block text-blue-400 hover:text-blue-300"
+                  className="block hover:text-cyan-300 transition"
                 >
                   LinkedIn →
                 </a>
 
                 <a
-                  href="https://mail.google.com/mail/?view=cm&fs=1&to=alphonse.damas@gmail.com"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="block text-blue-400 hover:text-blue-300"
+                  href="mailto:alphonse.damas@gmail.com"
+                  className="block hover:text-cyan-300 transition"
                 >
                   Email →
                 </a>
@@ -64,75 +79,70 @@ export default function ContactPage() {
                 <a
                   href="/resume/Alphonse_Damas_Resume.pdf"
                   target="_blank"
-                  rel="noopener noreferrer"
-                  className="block text-blue-400 hover:text-blue-300"
+                  className="block hover:text-cyan-300 transition"
                 >
                   Download Resume →
                 </a>
-
               </div>
             </div>
-
           </div>
 
-          {/* Right Side */}
-          <div className="border border-gray-800 bg-[#111827] rounded-2xl p-8">
+          <div className="bg-[#071224] border border-white/10 rounded-3xl p-8">
+            <h2 className="text-3xl font-bold mb-6">Send a Message</h2>
 
-            <h2 className="text-2xl font-bold mb-6">
-              Send a Message
-            </h2>
-
-            <form className="space-y-6">
-
+            <form onSubmit={handleSubmit} className="space-y-6">
               <div>
-                <label className="block text-sm text-gray-400 mb-2">
+                <label className="block text-sm text-gray-300 mb-2">
                   Name
                 </label>
 
                 <input
                   type="text"
+                  name="name"
                   placeholder="Your name"
-                  className="w-full bg-[#0B1120] border border-gray-700 rounded-xl px-4 py-3 text-white focus:outline-none focus:border-blue-500"
+                  required
+                  className="w-full bg-[#020817] border border-white/10 rounded-xl px-4 py-3 text-white focus:outline-none focus:border-cyan-400"
                 />
               </div>
 
               <div>
-                <label className="block text-sm text-gray-400 mb-2">
+                <label className="block text-sm text-gray-300 mb-2">
                   Email
                 </label>
 
                 <input
                   type="email"
+                  name="email"
                   placeholder="you@example.com"
-                  className="w-full bg-[#0B1120] border border-gray-700 rounded-xl px-4 py-3 text-white focus:outline-none focus:border-blue-500"
+                  required
+                  className="w-full bg-[#020817] border border-white/10 rounded-xl px-4 py-3 text-white focus:outline-none focus:border-cyan-400"
                 />
               </div>
 
               <div>
-                <label className="block text-sm text-gray-400 mb-2">
+                <label className="block text-sm text-gray-300 mb-2">
                   Message
                 </label>
 
                 <textarea
-                  rows={6}
+                  name="message"
                   placeholder="Tell me about your opportunity or project..."
-                  className="w-full bg-[#0B1120] border border-gray-700 rounded-xl px-4 py-3 text-white focus:outline-none focus:border-blue-500"
+                  rows={6}
+                  required
+                  className="w-full bg-[#020817] border border-white/10 rounded-xl px-4 py-3 text-white focus:outline-none focus:border-cyan-400"
                 />
               </div>
 
               <button
                 type="submit"
-                className="bg-blue-600 hover:bg-blue-500 px-6 py-4 rounded-xl font-semibold transition"
+                className="bg-blue-600 hover:bg-blue-500 transition text-white px-6 py-3 rounded-xl font-semibold"
               >
                 Send Message
               </button>
-
             </form>
-
           </div>
-
         </div>
-      </section>
+      </div>
     </main>
   );
 }
