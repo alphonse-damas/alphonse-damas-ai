@@ -2,15 +2,18 @@
 
 import React from "react";
 
+const emailAddress = "alphonse.damas@gmail.com";
+const linkedInUrl = "https://www.linkedin.com/in/alphonse-damas-phd-609222212/";
+
 export default function ContactPage() {
   function handleSubmit(event: React.FormEvent<HTMLFormElement>) {
     event.preventDefault();
 
     const formData = new FormData(event.currentTarget);
 
-    const name = formData.get("name");
-    const email = formData.get("email");
-    const message = formData.get("message");
+    const name = String(formData.get("name") || "");
+    const email = String(formData.get("email") || "");
+    const message = String(formData.get("message") || "");
 
     const subject = encodeURIComponent("Portfolio Contact Message");
 
@@ -18,31 +21,32 @@ export default function ContactPage() {
       `Name: ${name}\nEmail: ${email}\n\nMessage:\n${message}`
     );
 
-    window.location.href = `mailto:alphonse.damas@gmail.com?subject=${subject}&body=${body}`;
+    const gmailUrl = `https://mail.google.com/mail/?view=cm&fs=1&to=${emailAddress}&su=${subject}&body=${body}`;
+
+    window.open(gmailUrl, "_blank", "noopener,noreferrer");
   }
 
   return (
-    <main className="min-h-screen bg-[#020817] text-white px-6 py-24">
-      <div className="max-w-6xl mx-auto">
-        <div className="max-w-2xl mb-16">
-          <p className="text-cyan-400 uppercase tracking-[0.3em] text-sm mb-4">
+    <main className="min-h-screen bg-[#020817] px-6 py-24 text-white">
+      <div className="mx-auto max-w-6xl">
+        <div className="mb-16 max-w-2xl">
+          <p className="mb-4 text-sm uppercase tracking-[0.3em] text-cyan-400">
             Contact
           </p>
 
-          <h1 className="text-5xl font-bold mb-6">Let’s Connect</h1>
+          <h1 className="mb-6 text-5xl font-bold">Let’s Connect</h1>
 
-          <p className="text-gray-300 text-lg leading-relaxed">
+          <p className="text-lg leading-relaxed text-gray-300">
             I’m interested in opportunities involving enterprise analytics,
-            applied AI, decision systems, experimentation, analytics
-            governance, operational intelligence, and trustworthy AI
-            infrastructure.
+            applied AI, decision systems, experimentation, analytics governance,
+            operational intelligence, and trustworthy AI infrastructure.
           </p>
         </div>
 
-        <div className="grid md:grid-cols-2 gap-8">
+        <div className="grid gap-8 md:grid-cols-2">
           <div className="space-y-8">
-            <div className="bg-[#071224] border border-white/10 rounded-3xl p-8">
-              <h2 className="text-3xl font-bold mb-6">
+            <div className="rounded-3xl border border-white/10 bg-[#071224] p-8">
+              <h2 className="mb-6 text-3xl font-bold">
                 Professional Interests
               </h2>
 
@@ -56,43 +60,65 @@ export default function ContactPage() {
               </ul>
             </div>
 
-            <div className="bg-[#071224] border border-white/10 rounded-3xl p-8">
-              <h2 className="text-3xl font-bold mb-6">Connect Online</h2>
+            <div className="rounded-3xl border border-white/10 bg-[#071224] p-8">
+              <h2 className="mb-6 text-3xl font-bold">Connect Online</h2>
 
               <div className="space-y-4 text-cyan-400">
                 <a
-                  href="https://www.linkedin.com"
+                  href={linkedInUrl}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="block hover:text-cyan-300 transition"
+                  className="block transition hover:text-cyan-300"
                 >
                   LinkedIn →
                 </a>
 
                 <a
-                  href="mailto:alphonse.damas@gmail.com"
-                  className="block hover:text-cyan-300 transition"
+                  href={`https://mail.google.com/mail/?view=cm&fs=1&to=${emailAddress}`}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="block transition hover:text-cyan-300"
                 >
-                  Email →
+                  Email via Gmail →
+                </a>
+
+                <a
+                  href={`mailto:${emailAddress}`}
+                  className="block transition hover:text-cyan-300"
+                >
+                  Email via default mail app →
                 </a>
 
                 <a
                   href="/resume/Alphonse_Damas_Resume.pdf"
                   target="_blank"
-                  className="block hover:text-cyan-300 transition"
+                  rel="noopener noreferrer"
+                  className="block transition hover:text-cyan-300"
                 >
                   Download Resume →
                 </a>
               </div>
+
+              <p className="mt-8 text-sm leading-6 text-gray-400">
+                Direct email:{" "}
+                <span className="font-semibold text-gray-300">
+                  {emailAddress}
+                </span>
+              </p>
             </div>
           </div>
 
-          <div className="bg-[#071224] border border-white/10 rounded-3xl p-8">
-            <h2 className="text-3xl font-bold mb-6">Send a Message</h2>
+          <div className="rounded-3xl border border-white/10 bg-[#071224] p-8">
+            <h2 className="mb-6 text-3xl font-bold">Send a Message</h2>
+
+            <p className="mb-6 text-sm leading-6 text-gray-400">
+              This form opens a pre-filled Gmail message in a new tab. You can
+              review and send it from your email account.
+            </p>
 
             <form onSubmit={handleSubmit} className="space-y-6">
               <div>
-                <label className="block text-sm text-gray-300 mb-2">
+                <label className="mb-2 block text-sm text-gray-300">
                   Name
                 </label>
 
@@ -101,12 +127,12 @@ export default function ContactPage() {
                   name="name"
                   placeholder="Your name"
                   required
-                  className="w-full bg-[#020817] border border-white/10 rounded-xl px-4 py-3 text-white focus:outline-none focus:border-cyan-400"
+                  className="w-full rounded-xl border border-white/10 bg-[#020817] px-4 py-3 text-white focus:border-cyan-400 focus:outline-none"
                 />
               </div>
 
               <div>
-                <label className="block text-sm text-gray-300 mb-2">
+                <label className="mb-2 block text-sm text-gray-300">
                   Email
                 </label>
 
@@ -115,12 +141,12 @@ export default function ContactPage() {
                   name="email"
                   placeholder="you@example.com"
                   required
-                  className="w-full bg-[#020817] border border-white/10 rounded-xl px-4 py-3 text-white focus:outline-none focus:border-cyan-400"
+                  className="w-full rounded-xl border border-white/10 bg-[#020817] px-4 py-3 text-white focus:border-cyan-400 focus:outline-none"
                 />
               </div>
 
               <div>
-                <label className="block text-sm text-gray-300 mb-2">
+                <label className="mb-2 block text-sm text-gray-300">
                   Message
                 </label>
 
@@ -129,15 +155,15 @@ export default function ContactPage() {
                   placeholder="Tell me about your opportunity or project..."
                   rows={6}
                   required
-                  className="w-full bg-[#020817] border border-white/10 rounded-xl px-4 py-3 text-white focus:outline-none focus:border-cyan-400"
+                  className="w-full rounded-xl border border-white/10 bg-[#020817] px-4 py-3 text-white focus:border-cyan-400 focus:outline-none"
                 />
               </div>
 
               <button
                 type="submit"
-                className="bg-blue-600 hover:bg-blue-500 transition text-white px-6 py-3 rounded-xl font-semibold"
+                className="rounded-xl bg-blue-600 px-6 py-3 font-semibold text-white transition hover:bg-blue-500"
               >
-                Send Message
+                Open Email Draft
               </button>
             </form>
           </div>
