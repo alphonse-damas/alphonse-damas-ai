@@ -12,7 +12,7 @@ export default function StoryPage() {
         </Link>
 
         <p className="mt-10 text-sm font-semibold uppercase tracking-[0.25em] text-cyan-400">
-          Companion Story
+          Companion Story · Trustworthy AI
         </p>
 
         <h1 className="mt-4 text-4xl font-bold tracking-tight text-white md:text-5xl">
@@ -24,31 +24,75 @@ export default function StoryPage() {
           failure.
         </p>
 
-        <div className="mt-10 space-y-6 text-base leading-8 text-slate-300">
-          <p>Sarah Mitchell almost ignored the warning.</p>
+        <div className="mt-6 flex flex-wrap gap-3">
+          {[
+            "Weak Context",
+            "Silent Failure",
+            "AI Governance",
+            "Enterprise Risk",
+            "Human Consequence",
+          ].map((tag) => (
+            <span
+              key={tag}
+              className="rounded-full border border-slate-700 bg-slate-900/80 px-4 py-2 text-sm text-slate-300"
+            >
+              {tag}
+            </span>
+          ))}
+        </div>
+
+        <section className="mt-10 rounded-3xl border border-cyan-500/20 bg-slate-900/60 p-8">
+          <p className="text-sm font-semibold uppercase tracking-[0.25em] text-cyan-400">
+            Why this story exists
+          </p>
+
+          <p className="mt-5 text-lg leading-8 text-slate-300">
+            Technical essays explain how weak AI systems fail.
+          </p>
+
+          <p className="mt-4 text-lg leading-8 text-slate-300">
+            Stories show what those failures feel like when real people depend
+            on the system.
+          </p>
+
+          <p className="mt-4 text-lg leading-8 text-slate-300">
+            This companion narrative translates retrieval failure, weak context,
+            and false confidence into an ordinary workplace scenario where the
+            consequences are subtle enough to be ignored.
+          </p>
+        </section>
+
+        <div className="mt-12 space-y-6 text-base leading-8 text-slate-300">
+          <p className="text-2xl font-bold text-white">
+            Sarah Mitchell almost ignored the warning.
+          </p>
 
           <p>
             The message appeared in a small gray box at the bottom of her
             screen:
           </p>
 
-          <p className="rounded-2xl border border-slate-800 bg-slate-900/70 p-5 font-semibold text-cyan-300">
+          <div className="rounded-2xl border border-slate-800 bg-slate-900/70 p-5 font-semibold text-cyan-300">
             AI Response Generated Successfully.
-          </p>
+          </div>
 
           <p>That was the important part, according to management.</p>
 
           <p>
             Three months earlier, the insurance company had rolled out its new
             AI claims assistant, a system designed to help agents process
-            customer questions faster. Executives described it as
-            transformational.
+            customer questions faster.
+          </p>
+
+          <p>
+            Executives described the platform as transformational.
           </p>
 
           <ul className="list-disc space-y-2 pl-6">
             <li>Faster response times.</li>
             <li>Lower operating costs.</li>
             <li>Improved customer experience.</li>
+            <li>Reduced training requirements.</li>
           </ul>
 
           <p>At first, employees were skeptical.</p>
@@ -67,13 +111,16 @@ export default function StoryPage() {
             <li>mold damage.</li>
           </ul>
 
-          <p>People called after some terrible interruption to ordinary life.</p>
+          <p>People called after some interruption to ordinary life.</p>
 
           <p>
             The AI system — internally nicknamed “Atlas” — was supposed to help
-            agents quickly interpret policy language. Instead of manually
-            searching through hundreds of pages of documentation, employees
-            could simply type a question.
+            agents quickly interpret policy language.
+          </p>
+
+          <p>
+            Instead of manually searching through hundreds of pages of
+            documentation, employees could simply type a question.
           </p>
 
           <p>Atlas would:</p>
@@ -93,16 +140,16 @@ export default function StoryPage() {
           </p>
 
           <p>
-            Burst pipe. Second-floor bathroom. Water damage through the ceiling.
-            Hardwood floors ruined.
+            Burst pipe. Second-floor bathroom. Water damage through the
+            ceiling. Hardwood floors ruined.
           </p>
 
           <p>Daniel sounded exhausted.</p>
 
-          <p>
+          <div className="rounded-2xl border border-slate-800 bg-slate-900/70 p-5 italic text-slate-200">
             “You’re the fourth person I’ve talked to,” he said. “Can someone
             just tell me if this is covered?”
-          </p>
+          </div>
 
           <p>Sarah opened Atlas.</p>
 
@@ -111,257 +158,141 @@ export default function StoryPage() {
             the sentence:
           </p>
 
-          <p className="rounded-2xl border border-slate-800 bg-slate-900/70 p-5 font-semibold text-white">
+          <div className="rounded-2xl border border-slate-800 bg-slate-900/70 p-5 font-semibold text-white">
             Ask anything.
-          </p>
+          </div>
 
           <p>She typed:</p>
 
-          <p className="rounded-2xl border border-slate-800 bg-slate-900/70 p-5 text-slate-200">
-            Does homeowner policy cover water damage from burst bathroom pipe
-            causing floor and ceiling damage?
-          </p>
+          <div className="rounded-2xl border border-slate-800 bg-slate-900/70 p-5 text-slate-200">
+            Does homeowner policy cover water damage from burst second-floor
+            bathroom pipe?
+          </div>
 
-          <p>Atlas processed for a moment.</p>
+          <p>The system paused.</p>
 
-          <p>Then the answer appeared.</p>
+          <p>Then the response appeared.</p>
 
-          <div className="rounded-3xl border border-cyan-400/30 bg-slate-900/80 p-6">
-            <p className="font-bold text-cyan-300">Coverage Recommendation:</p>
-
-            <p className="mt-3">
-              Policy likely covers sudden and accidental water discharge events,
-              including pipe failures.
+          <div className="rounded-3xl border border-cyan-500/20 bg-slate-900/80 p-6">
+            <p className="font-semibold text-cyan-300">
+              Coverage confirmed under accidental water damage clause.
             </p>
 
-            <p className="mt-5 font-bold text-cyan-300">Confidence:</p>
+            <p className="mt-4 text-slate-300">
+              Customer may proceed with remediation and reimbursement process.
+            </p>
 
-            <p className="mt-3">High</p>
-
-            <p className="mt-5 font-bold text-cyan-300">Supporting Sources:</p>
-
-            <ul className="mt-3 list-disc space-y-2 pl-6">
-              <li>Water Damage Policy Reference</li>
-              <li>Residential Flood Event Guidelines</li>
-              <li>Property Loss Coverage Summary</li>
-            </ul>
-
-            <p className="mt-5 font-bold text-cyan-300">Suggested Response:</p>
-
-            <p className="mt-3">
-              Customer should qualify for standard water damage coverage pending
-              inspection.
+            <p className="mt-4 text-sm text-slate-500">
+              Confidence: 92%
             </p>
           </div>
 
-          <p>Sarah felt relief.</p>
+          <p>Daniel exhaled with relief.</p>
 
-          <p>The system sounded certain.</p>
+          <p>Sarah almost moved on.</p>
 
-          <p>
-            The words “Confidence: High” reassured her more than she realized.
-          </p>
-
-          <p>She relayed the information to Daniel.</p>
-
-          <p>For the first time during the call, he sounded calmer.</p>
-
-          <p>“Thank God,” he said quietly.</p>
-
-          <p className="text-xl font-bold text-white">
-            Two weeks later, the claim was denied.
-          </p>
-
-          <p>The problem was subtle.</p>
-
-          <p>The customer’s policy did cover burst pipes.</p>
+          <p>Almost.</p>
 
           <p>
-            But not if the pipe failure resulted from long-term deferred
-            maintenance.
+            Something about the answer bothered her. The wording felt unusually
+            broad.
           </p>
 
-          <p>An exclusion added during a policy revision eighteen months earlier.</p>
+          <p>
+            She opened the retrieval panel — a feature most employees ignored.
+          </p>
 
-          <p>Atlas had missed it entirely.</p>
-
-          <p>The retrieval system had pulled:</p>
+          <p>The system had retrieved three supporting documents.</p>
 
           <ul className="list-disc space-y-2 pl-6">
-            <li>an older general policy document,</li>
-            <li>a flood reference guide,</li>
-            <li>and a regional claims summary.</li>
+            <li>a current homeowner policy,</li>
+            <li>an archived regional claims memo,</li>
+            <li>and an unrelated commercial property guideline.</li>
           </ul>
 
           <p>
-            But it failed to retrieve the updated exclusion document stored in a
-            separate internal database.
-          </p>
-
-          <p>No alarms triggered.</p>
-
-          <p>No red warning messages appeared.</p>
-
-          <p>
-            The system simply answered using whatever information it had managed
-            to find.
+            The commercial policy language contained the reimbursement approval
+            Atlas had quoted.
           </p>
 
           <p>
-            And because the response sounded polished, everyone trusted it.
+            The system had stitched multiple fragments together into a confident
+            answer.
           </p>
 
-          <p>Including Sarah.</p>
+          <p>Partially correct.</p>
 
-          <p>The escalation meeting happened the following Monday.</p>
+          <p>Partially irrelevant.</p>
+
+          <p>Completely convincing.</p>
+
+          <p>Sarah reopened the actual homeowner policy.</p>
+
+          <p>There it was.</p>
+
+          <div className="rounded-2xl border border-amber-500/20 bg-amber-500/10 p-5 text-amber-100">
+            Water damage is covered unless the property was vacant for more than
+            thirty consecutive days.
+          </div>
+
+          <p>She checked the claim notes.</p>
+
+          <p>Daniel had been temporarily living elsewhere during renovations.</p>
+
+          <p>The house had been vacant for forty-two days.</p>
+
+          <p>The claim might not qualify.</p>
+
+          <p>Atlas never mentioned the exclusion.</p>
 
           <p>
-            Ten people crowded into a conference room with glass walls and
-            artificial plants. A dashboard glowed on the screen.
+            Not because the information did not exist.
           </p>
 
-          <ul className="list-disc space-y-2 pl-6">
-            <li>AI Adoption Metrics.</li>
-            <li>Response Time Improvements.</li>
-            <li>Customer Satisfaction Scores.</li>
-            <li>Operational Efficiency Gains.</li>
-          </ul>
+          <p>Because the system never retrieved it.</p>
 
-          <p>The Vice President of Claims pointed toward the charts proudly.</p>
-
-          <p>“Average handling time is down twenty-three percent.”</p>
-
-          <p>Nobody mentioned Daniel Reeves until Sarah spoke.</p>
-
-          <p>“The customer says we misled him.”</p>
-
-          <p>Silence.</p>
-
-          <p>One of the engineers adjusted his glasses.</p>
-
-          <p>“The model hallucinated?” someone asked.</p>
-
-          <p>
-            “No,” the engineer replied carefully. “Technically, the language
-            generation was fine.”
-          </p>
-
-          <p>Sarah frowned.</p>
-
-          <p>“What does that mean?”</p>
-
-          <p>The engineer hesitated.</p>
-
-          <p>“It answered confidently using incomplete retrieval.”</p>
-
-          <p>The room remained silent.</p>
-
-          <p>Most people did not understand the sentence.</p>
-
-          <p>Sarah understood only part of it.</p>
-
-          <p>
-            That night, unable to sleep, Sarah logged back into the system from
-            home.
-          </p>
-
-          <p>She opened the original interaction.</p>
-
-          <p>For the first time, she looked beyond the answer itself.</p>
-
-          <p>She examined the retrieved documents.</p>
-
-          <p>
-            Three sources.
-            <br />
-            None containing the exclusion.
+          <p className="text-2xl font-bold text-white">
+            That was the moment Sarah understood the real danger.
           </p>
 
           <p>
-            The AI had not actually found the most important information.
+            Atlas was not lying.
           </p>
 
           <p>
-            It simply constructed the best answer it could from weak material.
+            It was answering from incomplete evidence.
+          </p>
+
+          <p>And incomplete evidence still sounded intelligent.</p>
+
+          <p>
+            Over the next few weeks, Sarah started noticing the pattern
+            everywhere.
           </p>
 
           <p>
-            Like a student bluffing through an exam question after reading only
-            half the chapter.
+            Employees trusted polished language more than evidence quality.
           </p>
-
-          <p>The next morning, Sarah visited Ethan from the internal AI team.</p>
 
           <p>
-            His office was buried beneath cables, monitors, and half-empty
-            coffee cups.
+            Managers celebrated response speed without reviewing retrieval
+            accuracy.
           </p>
-
-          <p>“I need you to explain something to me,” she said.</p>
-
-          <p>Ethan swiveled toward her.</p>
-
-          <p>“Okay.”</p>
 
           <p>
-            “When Atlas doesn’t know something… why doesn’t it just say that?”
+            Executives monitored customer satisfaction dashboards while assuming
+            the underlying answers were correct.
           </p>
-
-          <p>Ethan gave a tired smile.</p>
-
-          <p>“That’s harder than people think.”</p>
-
-          <p>He pulled up a diagram on his screen.</p>
 
           <p>
-            “Most people think the AI is the important part,” he said. “But
-            retrieval is usually the real problem.”
+            Atlas rarely failed dramatically.
           </p>
 
-          <p>Sarah stared blankly.</p>
+          <p>That was precisely the problem.</p>
 
           <p>
-            Ethan leaned back. “Imagine you hire the smartest lawyer in the
-            world,” he said. “But before every case, someone hands them random
-            pages from random law books.”
+            Even weak answers sounded polished.
           </p>
-
-          <p>“That’s retrieval?”</p>
-
-          <p>“Exactly.”</p>
-
-          <p>“And the AI?”</p>
-
-          <p>“The lawyer trying to make sense of whatever pages it received.”</p>
-
-          <p>Sarah folded her arms.</p>
-
-          <p>“So Atlas never actually understood the policy?”</p>
-
-          <p>“It understood the documents it retrieved.”</p>
-
-          <p>“But the important document was missing.”</p>
-
-          <p>“Right.”</p>
-
-          <p>She sat quietly for a moment.</p>
-
-          <p>“Then why mark the answer high confidence?”</p>
-
-          <p>Ethan exhaled slowly.</p>
-
-          <p>
-            “Because confidence often measures how fluent the answer sounds. Not
-            whether the system retrieved the right evidence.”
-          </p>
-
-          <p>The sentence unsettled her.</p>
-
-          <p>Over the following weeks, Sarah noticed things she had ignored before.</p>
-
-          <p>Atlas almost never admitted uncertainty.</p>
-
-          <p>Even weak answers sounded polished.</p>
 
           <p>Even partial answers sounded complete.</p>
 
@@ -371,7 +302,7 @@ export default function StoryPage() {
 
           <p>And that made it dangerous.</p>
 
-          <p>One afternoon, she tested it herself.</p>
+          <p>One afternoon, Sarah tested it herself.</p>
 
           <p>She entered deliberately confusing policy questions.</p>
 
@@ -389,6 +320,30 @@ export default function StoryPage() {
           <p>The AI always seemed eager to answer.</p>
 
           <p>As though silence itself were forbidden.</p>
+
+          <section className="rounded-3xl border border-cyan-500/20 bg-slate-900/60 p-8">
+            <p className="text-sm font-semibold uppercase tracking-[0.25em] text-cyan-400">
+              The deeper problem
+            </p>
+
+            <h2 className="mt-4 text-3xl font-bold text-white">
+              Confidence became a user interface.
+            </h2>
+
+            <p className="mt-6 leading-8 text-slate-300">
+              The system did not need to be correct all the time to reshape
+              human behavior.
+            </p>
+
+            <p className="mt-4 leading-8 text-slate-300">
+              It only needed to sound reliable often enough for employees to
+              stop questioning it.
+            </p>
+
+            <p className="mt-4 leading-8 text-slate-300">
+              Quiet dependence formed long before visible failure appeared.
+            </p>
+          </section>
 
           <p>Months later, the company quietly changed the interface.</p>
 
@@ -409,10 +364,10 @@ export default function StoryPage() {
 
           <p>A second notice sometimes appeared beneath responses:</p>
 
-          <p className="rounded-2xl border border-slate-800 bg-slate-900/70 p-5 text-slate-200">
+          <div className="rounded-2xl border border-slate-800 bg-slate-900/70 p-5 text-slate-200">
             Relevant policy updates may not have been retrieved. Human review
             recommended.
-          </p>
+          </div>
 
           <p>Executives worried the warnings would reduce trust.</p>
 
@@ -440,6 +395,85 @@ export default function StoryPage() {
             That was the problem.
           </p>
         </div>
+
+        <section className="mt-16 rounded-3xl border border-cyan-500/20 bg-slate-900/60 p-8">
+          <p className="text-sm font-semibold uppercase tracking-[0.25em] text-cyan-400">
+            Related essay
+          </p>
+
+          <h2 className="mt-4 text-3xl font-bold text-white">
+            Why Most RAG Systems Fail Quietly
+          </h2>
+
+          <p className="mt-6 leading-8 text-slate-300">
+            This companion technical essay explains the underlying architectural
+            problem behind the story: weak retrieval, incomplete context,
+            confidence inflation, and silent operational risk.
+          </p>
+
+          <Link
+            href="/writing/why-most-rag-systems-fail-quietly"
+            className="mt-8 inline-flex rounded-full border border-cyan-400/30 bg-cyan-500/10 px-5 py-3 text-sm font-semibold text-cyan-300 transition hover:bg-cyan-500/20"
+          >
+            Read the technical essay →
+          </Link>
+        </section>
+
+        <section className="mt-16 rounded-3xl border border-slate-800 bg-slate-900/50 p-8">
+          <p className="text-sm font-semibold uppercase tracking-[0.25em] text-cyan-400">
+            Portfolio connection
+          </p>
+
+          <h2 className="mt-4 text-3xl font-bold text-white">
+            Stories reveal the operational consequence.
+          </h2>
+
+          <p className="mt-6 leading-8 text-slate-300">
+            The projects in this portfolio demonstrate governance-first AI
+            architectures.
+          </p>
+
+          <p className="mt-4 leading-8 text-slate-300">
+            The essays explain the philosophy behind those systems.
+          </p>
+
+          <p className="mt-4 leading-8 text-slate-300">
+            The stories show what happens when organizations deploy systems that
+            sound intelligent before they become trustworthy.
+          </p>
+
+          <div className="mt-8 grid gap-4 md:grid-cols-2">
+            {[
+              "Confidence without evidence creates operational risk.",
+              "Silent failure is more dangerous than visible refusal.",
+              "Weak retrieval can quietly distort business decisions.",
+              "Trustworthy AI requires observability and governance.",
+            ].map((lesson) => (
+              <div
+                key={lesson}
+                className="rounded-2xl border border-slate-800 bg-slate-950/60 p-5 text-slate-200"
+              >
+                {lesson}
+              </div>
+            ))}
+          </div>
+
+          <div className="mt-10 flex flex-wrap gap-4">
+            <Link
+              href="/projects/marginalia-rag-governance"
+              className="rounded-full border border-cyan-400/30 bg-cyan-500/10 px-5 py-3 text-sm font-semibold text-cyan-300 transition hover:bg-cyan-500/20"
+            >
+              View Related System
+            </Link>
+
+            <Link
+              href="/writing"
+              className="rounded-full border border-slate-700 px-5 py-3 text-sm font-semibold text-slate-300 transition hover:border-slate-500 hover:text-white"
+            >
+              Explore More Writing
+            </Link>
+          </div>
+        </section>
       </article>
     </main>
   );

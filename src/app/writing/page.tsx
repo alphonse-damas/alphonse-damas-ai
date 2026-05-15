@@ -203,12 +203,12 @@ const writingCategories = [
         essayTitle: "Why Weak Context Detection Matters in Enterprise RAG",
         essayDescription:
           "Weak and empty context handling, hallucination prevention, refusal-first behavior, and trust-aware retrieval systems.",
-        essayHref: "#",
+        essayHref: "/writing/weak-context-detection-rag",
 
-        storyTitle: "Coming Soon",
+        storyTitle: "The System Hesitated",
         storyDescription:
-          "A story about an AI assistant quietly answering questions from incomplete evidence.",
-        storyHref: "#",
+          "A hospital AI system begins refusing recommendations when evidence quality becomes weak or incomplete.",
+        storyHref: "/writing/the-system-hesitated",
       },
     ],
   },
